@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- comment to copy -->
+<!--  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/png" href="src/img/logo.png" />
+  <title>FIRE GYM</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/css/styles.css">
+
+</head>
+
+<body>
+  <!--Header Section-->
+  <header id="home"
+    class=" top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+        <span class="ml-3 text-xl hover:text-red-500">Fire Gym</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+        <a href="#home" class="mr-5 hover:text-red-500">Home</a>
+        <a href="#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+        <a href="#price" class="mr-5 hover:text-red-500">Pricing</a>
+        <a href="#contact" class="mr-5 hover:text-red-500">Contact</a>
+      </nav>
+      <button onclick="location.href='/auth/login/index.html'"
+        class="bg-transparent hover:bg-red-500 text-red-500 font-semibold hover:text-white  py-2 px-4 border border-red-500 hover:border-transparent rounded-full cursor-pointer">
+        Login
+      </button>
+      <button onclick="location.href='/auth/registration/index.html'"
+        class="bg-transparent hover:bg-red-500 text-red-500 font-semibold hover:text-white  py-2 px-4 border border-red-500 hover:border-transparent rounded-full cursor-pointer">
+        Register
+      </button>
+    </div>
+  </header>
+  <!--Header Section End-->
+  <!--Main Section-->
+  <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 95vh">
+    <div class="absolute top-0 w-full h-full bg-top bg-cover" style="
+      background-image: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80');
+    ">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+    </div>
+    <div class="container relative mx-auto" data-aos="fade-in">
+      <div class="items-center flex flex-wrap">
+        <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+          <div>
+            <br>
+            <h1 class="mb-4 text-white font-semibold text-5xl">
+              Feel The <span class="text-red-500">Fire</span>
+            </h1>
+            <p class="mt-4 text-lg text-gray-300">
+              Welcome to The Fire Gym. We are a fitness and training center that focuses on pushing you to your absolute
+              limit. Enroll now to get started today!
+            </p>
+            <button id="aarow" onclick="location.href='#about'" data-aos="fade-up" data-aos-duration="3000"
+              class="mt-4 text-lg text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+      style="height: 70px; transform: translateZ(0px)">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </div>
+  <!--Main Section End-->
+  <!--About Section-->
+  <section id="about" class="relative py-20 bg-black text-white">
+    <div class="container mx-auto px-4">
+      <div class="items-center flex flex-wrap">
+        <div class="w-full md:w-4/12 ml-auto mr-auto px-4" data-aos="fade-right">
+          <img alt="..." class="max-w-full rounded-lg shadow-lg"
+            src="https://source.unsplash.com/350x450/?gym,trainer" />
+        </div>
+        <div class="w-full md:w-5/12 ml-auto mr-auto px-4" data-aos="fade-left">
+          <div class="md:pr-12">
+            <h3 class="text-4xl uppercase font-bold text-red-500">About Us</h3>
+            <p class="mt-4 text-lg leading-relaxed">
+              We are the un-corporation. Our mission is to provide you with all the tools you need to reach your fitness
+              goals in a clean, vibrant, engaging environment you will be proud to call your GYM. We won't hold you
+              hostage like other fitness clubs, you'll want to stay because we care!
+            </p>
+            <ul class="list-none mt-6">
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span class="font-semibold inline-block py-3 mr-3 text-red-500"><i
+                        class="fa fa-dumbbell fa-2x"></i></span>
+                  </div>
+                  <div>
+                    <h4 class="text-xl">The latest & Greatest Gym Equipment</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span class="font-semibold inline-block py-3 mr-6 text-red-500"><i
+                        class="ml-1 fa fa-rupee-sign fa-2x"></i>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="text-xl">Free Trial for New Members</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span class="font-semibold inline-block py-3 mr-3 text-red-500"><i
+                        class="fa fa-users fa-2x"></i></span>
+                  </div>
+                  <div>
+                    <h4 class="text-xl">Professional Personal Trainers</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span class="font-semibold inline-block py-3 mr-6 text-red-500">
+                      <i class="ml-1 fa fa-hourglass fa-2x"></i>
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="text-xl">Open 24/7 for Convenience</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="flex items-center">
+                  <div>
+                    <span class="font-semibold inline-block py-3 mr-4 text-red-500">
+                      <i class="ml-1 fa fa-blender fa-2x"></i></span>
+                  </div>
+                  <div>
+                    <h4 class="text-xl">Discounted Protein Supplement</h4>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--About Section End-->
+  <!--Gallery Section-->
+  <section class="relative py-20 bg-black text-white body-font">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center text-center mb-24">
+        <div class="w-full lg:w-6/12 px-4">
+          <h1 class="text-4xl font-semibold uppercase">
+            Gallery
+          </h1>
+          <p class="text-lg leading-relaxed m-4">
+            Check out Our Gallery!
+          </p>
+        </div>
+      </div>
+      <div id="gallery" class="container grid grid-cols-3 gap-2 mx-auto">
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="gym" src="https://source.unsplash.com/600x400/?gym">
+        </div>
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="fitness" src="https://source.unsplash.com/600x400/?fitness">
+        </div>
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="fitness,gym" src="https://source.unsplash.com/600x400/?fitness,gym">
+        </div>
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="gym,fitness" src="https://source.unsplash.com/600x400/?gym,fitness">
+        </div>
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="workout" src="https://source.unsplash.com/600x400/?workout">
+        </div>
+        <div class="w-full rounded" data-aos="flip-right">
+          <img alt="exercise" src="https://source.unsplash.com/600x400/?exercise">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Gallery Section End-->
+  <!--Pricing Section-->
+  <section class="relative py-20 bg-black text-white body-font">
+    <div class="container max-w-full mx-auto py-12 px-6">
+      <h1 id="price" class="text-center text-4xl text-white font-medium leading-snug tracking-wider">
+        Pricing
+      </h1>
+      <p class="text-center text-lg text-grey-100 mt-2 px-6">
+        Signup for a free 30-day trial today! No Payment needed.
+      </p>
+      <div class="h-1 mx-auto bg-red-500 w-24 opacity-75 mt-4 rounded"></div>
+
+      <div class="max-w-full md:max-w-6xl mx-auto my-3 md:px-8">
+        <div class="relative block flex flex-col md:flex-row items-center">
+          <div data-aos="zoom-in" class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 md:-mr-4">
+            <div class="bg-dark text-white rounded-lg">
+              <div data-aos="zoom-in"
+                class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-gray-200 px-8 lg:px-6">
+                <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
+                  ONE DAY PASS
+                </h1>
+                <h2 class="text-sm text-gray-400 text-center pb-6">₹50/PER DAY</h2>
+                Whether you're visiting Fire-Gym on business or are just taking your personal fitness one day at a time,
+                we'd like to invite you to experience all that Fire-Gym has to offer.
+              </div>
+              <div class="flex flex-wrap mt-3 px-6">
+                <ul>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-green-700">
+                      <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Access to Gym Equipments.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-red-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Access to The Swimming Pool.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-red-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">No Time Restriction.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-red-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Free Personal Trainer.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="block flex items-center p-8  uppercase">
+                <a href="/auth/registration/index.html"
+                  class="mt-3 text-lg font-semibold bg-red-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-red-900 text-center">
+                  ENROLL NOW</a>
+              </div>
+            </div>
+          </div>
+          <div data-aos="zoom-in-up"
+            class="w-full max-w-md sm:w-2/3 lg:w-1/3 sm:my-5 my-8 relative z-10 bg-dark rounded-lg shadow-lg">
+            <div
+              class="text-sm leading-none rounded-t-lg bg-red-500 text-white font-semibold uppercase py-4 text-center tracking-wide">
+              Most Popular
+            </div>
+            <div class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-gray-200 px-8 lg:px-6">
+              <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
+                MONTH PASS
+              </h1>
+              <h2 class="text-sm text-gray-400 text-center pb-6"><span class="text-3xl">₹500</span> /PER MONTH</h2>
+              Our monthly membership helps you to keep your fitness goals on track without a commitment of any kind,
+              while still enjoying all of the amenities that Fire-Gym has to offer.
+            </div>
+            <div class="flex pl-12 justify-start sm:justify-start mt-3">
+              <ul>
+                <li class="flex items-center">
+                  <div class="rounded-full p-2 fill-current text-green-700">
+                    <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <span class="text-gray-200 text-lg ml-3">Access to Gym Equipments.</span>
+                </li>
+                <li class="flex items-center">
+                  <div class=" rounded-full p-2 fill-current text-green-700">
+                    <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <span class="text-gray-200 text-lg ml-3">Access to The Swimming Pool.</span>
+                </li>
+                <li class="flex items-center">
+                  <div class=" rounded-full p-2 fill-current text-green-700">
+                    <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <span class="text-gray-200 text-lg ml-3">No Time Restriction.</span>
+                </li>
+                <li class="flex items-center">
+                  <div class=" rounded-full p-2 fill-current text-red-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-200 text-lg ml-3">Free Personal Trainer.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block flex items-center p-8  uppercase">
+              <a href="/auth/registration/index.html"
+                class="mt-3 text-lg font-semibold bg-red-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-red-900 text-center">ENROLL
+                NOW</a>
+            </div>
+          </div>
+          <div data-aos="zoom-in"
+            class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-mr-4">
+            <div class="bg-dark text-white rounded-lg">
+              <div class="block text-left text-sm sm:text-md max-w-sm mx-auto mt-2 text-gray-200 px-8 lg:px-6">
+                <h1 class="text-lg font-medium uppercase p-3 pb-0 text-center tracking-wide">
+                  YEARLY PASS
+                </h1>
+                <h2 class="text-sm text-gray-400 text-center pb-6">₹400 /PER MONTH</h2>
+                With a 1-year commitment, we offer a monthly membership for only ₹400. When you pre-purchase a complete
+                year individual membership you get 2/m free extension.
+              </div>
+              <div class="flex flex-wrap mt-3 px-6">
+                <ul>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-green-700">
+                      <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Access to Gym Equipments.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-green-700">
+                      <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Access to The Swimming Pool.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-green-700">
+                      <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">No Time Restriction.</span>
+                  </li>
+                  <li class="flex items-center">
+                    <div class=" rounded-full p-2 fill-current text-green-700">
+                      <svg class="w-6 h-6 align-middle" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <span class="text-gray-200 text-lg ml-3">Free Personal Trainer.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="block flex items-center p-8  uppercase">
+                <a href="/auth/registration/index.html"
+                  class="mt-3 text-lg font-semibold bg-red-500 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:bg-red-900 text-center">
+                  ENROLL NOW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Pricing Section End-->
+  <!--Contact Section-->
+  <section class="pb-20 relative block bg-black text-white">
+    <div class="container mx-auto px-4 lg:pt-24 lg:pb-64 pb-20 pt-20">
+      <div class="flex flex-wrap text-center justify-center">
+        <div class="w-full lg:w-6/12 px-4">
+          <h2 id="contact" class="text-4xl font-semibold text-white uppercase">
+            Contact Us
+          </h2>
+          <p class="text-lg leading-relaxed mt-4 mb-4">
+            Contact us to ask any questions, acquire a membership, talk to
+            our trainers or anything else
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Form -->
+  <section class="relative block py-24 lg:pt-0 bg-black">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
+            data-aos="zoom-in">
+            <div class="flex-auto p-5 lg:p-10 bg-black text-white">
+              <h4 class="text-2xl font-semibold">Want to workout with us?</h4>
+              <p class="leading-relaxed mt-1 mb-4">
+                Complete this form and we will get back to you in 24 hours.
+              </p>
+              <div class="alert rounded">Your message has been sent</div>
+              <form id="contactForm">
+                <div class="flex flex-wrap -m-2">
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label class="leading-7 text-sm text-gray-400">Name</label>
+                      <input type="text" name="name" id="name"
+                        class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        required>
+                    </div>
+                  </div>
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_subject" value="Fire-Gym ContactForm!">
+                  <input type="hidden" name="_autoresponse"
+                    value="Thanks for reaching out to FIRE-GYM! We'll get back to you within one business day.">
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label class="leading-7 text-sm text-gray-400">Email</label>
+                      <input type="email" name="email" id="email"
+                        class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                        required>
+                    </div>
+                  </div>
+                  <div class="p-2 w-full">
+                    <div class="relative">
+                      <label class="leading-7 text-sm text-gray-400">Message</label>
+                      <textarea
+                        class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                        id="message" rows="5" name="message" required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-6">
+                  <button
+                    class="bg-red-500 text-white active:bg-red-900 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                    style="transition: all 0.15s ease 0s" type="submit" id="submit">Send Message</button>
+                </div>
+              </form>
+              <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
+                <a href="mailto:info@fire-gym.web.app" class="text-red-400">info@fire-gym.web.app</a>
+                <p class="leading-normal my-5">Knowledge Park II.
+                  <br>Greater Noida, UP 203207
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Form End-->
+  <!--Contact Section End-->
+  <!--Footer Section-->
+  <footer class="text-white bg-black body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+        <span class="ml-3 text-xl hover:text-red-500">FIRE GYM</span>
+      </a>
+      <span class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+        <a href="#home" class="mr-5 hover:text-red-500">Home</a>
+        <a href="#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+        <a href="#price" class="mr-5 hover:text-red-500">Pricing</a>
+        <a href="#contact" class="mr-5 hover:text-red-500">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <!--Footer Section End-->
+  <!--New Firebase Scripts(didn't worked)-->
+  <!--<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>-->
+  <script src="src/js/app.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="src/js/main.js"></script>
+</body>
+
+</html>
