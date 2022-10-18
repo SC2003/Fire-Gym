@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://fire-gym.web.app/src/img/logo.png" />
+    <title>Welcome Page</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+        body {
+            background: #F8F8F8;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .message {
+            font-size: 70px;
+            font-family: 'Ubuntu', sans-serif;
+            color: steelblue;
+        }
+
+        .success {
+            font-size: 18px;
+            margin-top: 15px;
+            color: seagreen;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <!--Header-->
+    <header id="home"
+        class="sticky top-0 z-50 absolute w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="https://fire-gym.web.app/src/img/logo.png"
+                    class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+                <span class="ml-3 text-xl hover:text-red-500">Fire Gym</span>
+            </a>
+            <!--<nav class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+      TODO @check the links
+      <a href="/index.html" class="mr-5 hover:text-red-500">Home</a>
+      <a href="/index.html#about" class="mr-5 hover:text-red-500">About</a>
+      <a href="/index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+      <a href="/index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+      <a href="/index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+    </nav>-->
+            <nav class="tabs md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+                <button data-target="panel-1"
+                    class="tab active hover:bg-red-500  font-semibold hover:text-white  py-2 px-4 border border-red-500 rounded-full cursor-pointer">
+                    Dashboard
+                </button><button data-target="panel-2"
+                    class="tab hover:bg-red-500  font-semibold hover:text-white  py-2 px-4 border border-red-500 rounded-full cursor-pointer">
+                    Classes
+                </button><button data-target="panel-3"
+                    class="tab  hover:bg-red-500  font-semibold hover:text-white  py-2 px-4 border border-red-500 rounded-full cursor-pointer">
+                    Other info
+                </button>
+            </nav>
+        </div>
+    </header>
+    <!--Header End-->
+    <div id="panels">
+        <div class="panel-1 tab-content active py-5">
+            <center>
+                <div style="margin:100px">
+                    <h1 id="user" class="message">Hello, < email-id>
+                    </h1>
+                    <div class="success"><span class="text-green-500">Welcome to Fire-Gym Client Dashboard, You are
+                            successfully loged in!!!</span></div><br />
+                    <button class="btn btn-danger" onclick="logout()">Logout</button>
+                </div>
+            </center>
+        </div>
+        <div class="panel-2 tab-content py-5">
+            <center>
+                <div style="margin:100px">
+                    <h1 class="message">Our Youtube Embed Video Gallery</h1>
+                </div>
+                <div class="container grid grid-cols-3 gap-2 mx-auto">
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/BnzKpH7hA5s" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/o7TdKtlYClU" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/vHjfEDeck_A" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/ojfgLTwSBHA" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/QHaa5HMlJrc" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                    <div class="w-full rounded">
+                        <div class="relative" style="padding-top: 56.25%">
+                            <iframe class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/YPSDz0-sxsk" frameborder="0" …></iframe>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="panel-3 tab-content py-5">
+            <center>
+                <div style="margin:100px">
+                    <h1 class="message">More Options Coming Soon</h1>
+                </div>
+            </center>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script src="../auth/firebase.js"></script>
+    <script src="./client.js"></script>
+    <script>
+        const tabs = document.querySelectorAll(".tabs");
+        const tab = document.querySelectorAll(".tab");
+        const panel = document.querySelectorAll(".tab-content");
+        function onTabClick(event) {
+            // deactivate existing active tabs and panel
+            for (let i = 0; i < tab.length; i++) {
+                tab[i].classList.remove("active");
+            }
+            for (let i = 0; i < panel.length; i++) {
+                panel[i].classList.remove("active");
+            }
+            // activate new tabs and panel
+            event.target.classList.add('active');
+            let classString = event.target.getAttribute('data-target');
+            console.log(classString);
+            document.getElementById('panels').getElementsByClassName(classString)[0].classList.add("active");
+        }
+        for (let i = 0; i < tab.length; i++) {
+            tab[i].addEventListener('click', onTabClick, false);
+        }
+    </script>
+</body>
+
+</html>
