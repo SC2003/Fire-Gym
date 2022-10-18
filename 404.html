@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="src/img/logo.png" />
+  <title>404</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style media="screen">
+    body {
+
+      background: black;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+
+      max-width: 360px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ff0606;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+
+      margin: 0 0 16px;
+    }
+
+    #message p {
+      line-height: 140%;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    #message a {
+      display: block;
+      text-align: center;
+      background: red;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    #message,
+    #message a {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #load {
+
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
+      #message {
+        margin-top: 0;
+        background: black;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--Header-->
+  <header id="home"
+    class="sticky top-0 z-50 absolute w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+        <span class="ml-3 text-xl hover:text-red-500">Fire Gym</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+        <!--TODO @check the links-->
+        <a href="index.html" class="mr-5 hover:text-red-500">Home</a>
+        <a href="index.html#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+        <a href="index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+        <a href="index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <hr>
+  <!--Header End-->
+  <hr />
+  <div id="message" class="text-white bg-black md:ml-auto flex-wrap items-center text-base justify-center">
+    <h2 class="m-auto">Oops!</h2>
+    <h1 class="m-auto">404 PAGE NOT FOUND</h1>
+    <p class="m-auto">YOU MAY HAVE MISTYPED THE ADDRESS OR THE PAGE MAY HAVE MOVED.</p>
+    <a class="m-auto" href="index.html">FIRE GYM</a>
+  </div>
+  <!--Footer-->
+  <footer class="bottom-0 absolute z-50 w-full flex flex-wrap items-center text-white bg-black body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+        <span class="ml-3 text-xl hover:text-red-500">FIRE GYM</span>
+      </a>
+      <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Copyright ©
+        2021-2022—
+        <a href="https://linkedin.com/in/sc2003" class="text-white ml-1" rel="noopener noreferrer"
+          target="_blank">@ShaileshChaudhary</a>
+      </p>
+      <span class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+        <a href="index.html" class="mr-5 hover:text-red-500">Home</a>
+        <a href="index.html#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+        <a href="index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+        <a href="index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <!--Footer End-->
+</body>
+
+</html>
