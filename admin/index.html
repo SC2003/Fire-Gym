@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="src/img/logo.png" />
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <!--Header-->
+    <header id="home"
+        class="sticky top-0 z-50 absolute w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+                <span class="ml-3 text-xl hover:text-red-500">Fire Gym</span>
+            </a>
+            <div class="w-1/2 mx-auto mt-4 rounded">
+                <!-- Tabs -->
+                <nav id="tabs" class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-100">
+                    <a class="mr-5 hover:text-red-500" id="default-tab" href="#das">Dashboard</a>
+                    <a class="mr-5 hover:text-red-500" href="#mem">Members</a>
+                    <a class="mr-5 hover:text-red-500" href="#msg">Messages Inbox</a>
+                    <a class="mr-5 hover:text-red-500" href="#qus">Others(?)</a>
+                </nav>
+            </div>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-100">
+                <!--TODO @check the links-->
+                <a href="index.html" class="mr-5 hover:text-red-500">Home</a>
+                <a href="index.html#about" class="mr-5 hover:text-red-500">About</a>
+                <a href="index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+                <a href="index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+                <a href="index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <!--Header End-->
+    <!--Admin Panel-->
+    <div class="w-1/2 mx-auto mt-4 rounded">
+        <!-- Tab Contents -->
+        <div id="tab-contents">
+            <div id="das" class="p-4 text-grey-100">
+                <span>First tab</span>
+                <h1>hello, World!</h1>
+            </div>
+            <div id="mem" class="hidden p-4 text-grey-100">
+                <span>Second tab</span>
+                <h1>hello, World!</h1>
+            </div>
+            <div id="msg" class="hidden p-4 text-grey-100">
+               <span> Third tab</span>
+               <h1>hello, World!</h1>
+            </div>
+            <div id="qus" class="hidden p-4 text-grey-100">
+                <span>Fourth tab</span>
+                <h1>hello, World!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="w-1/2 mx-auto mt-4  rounded">
+        <!-- Tabs -->
+        <ul id="tabs" class="inline-flex w-full px-1 pt-2 ">
+            <a class="mr-5 hover:text-red-500" id="default-tab" href="#das">Dashboard</a>
+            <a class="mr-5 hover:text-red-500" href="#mem">Members</a>
+            <a class="mr-5 hover:text-red-500" href="#msg">Messages Inbox</a>
+            <a class="mr-5 hover:text-red-500" href="#qus">Others(?)</a>
+        </ul>
+
+       <!-- Tab Contents -->
+       <div id="tab-contents">
+        <div id="das" class="p-4 text-grey-100">
+            <span>First tab</span>
+            <h1>hello, World!</h1>
+        </div>
+        <div id="mem" class="hidden p-4 text-grey-100">
+            <span>Second tab</span>
+            <h1>hello, World!</h1>
+        </div>
+        <div id="msg" class="hidden p-4 text-grey-100">
+           <span> Third tab</span>
+           <h1>hello, World!</h1>
+        </div>
+        <div id="qus" class="hidden p-4 text-grey-100">
+            <span>Fourth tab</span>
+            <h1>hello, World!</h1>
+        </div>
+    </div>
+</div>
+    <!--Admin Panel End-->
+    <!--Footer-->
+    <footer class="bottom-0 absolute z-50 w-full flex flex-wrap items-center text-white bg-black body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+                <img src="src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+                <span class="ml-3 text-xl hover:text-red-500">FIRE GYM</span>
+            </a>
+            <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                Copyright ©
+                2021-2022—
+                <a href="https://linkedin.com/in/sc2003" class="text-white ml-1" rel="noopener noreferrer"
+                    target="_blank">@ShaileshChaudhary</a>
+            </p>
+            <span class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+                <a href="index.html" class="mr-5 hover:text-red-500">Home</a>
+                <a href="index.html#about" class="mr-5 hover:text-red-500">About</a>
+                <a href="index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+                <a href="index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+                <a href="index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+            </span>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>
