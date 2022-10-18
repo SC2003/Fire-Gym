@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="https://fire-gym.web.app/src/img/logo.png" />
+  <title>Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black">
+  <!--Header-->
+  <header id="home"
+    class="sticky top-0 z-50 absolute w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="/" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="https://fire-gym.web.app/src/img/logo.png" class="w-10 h-10 text-white p-2 bg-red-500 rounded-full" />
+        <span class="ml-3 text-xl hover:text-red-500">Fire Gym</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center text-gray-300">
+        <!--TODO @check the links-->
+        <a href="/index.html" class="mr-5 hover:text-red-500">Home</a>
+        <a href="/index.html#about" class="mr-5 hover:text-red-500">About</a>
+        <a href="/index.html#gallery" class="mr-5 hover:text-red-500">Gallery</a>
+        <a href="/index.html#price" class="mr-5 hover:text-red-500">Pricing</a>
+        <a href="/index.html#contact" class="mr-5 hover:text-red-500">Contact</a>
+      </nav>
+      <button onclick="location.href='../login/index.html'"
+        class="bg-transparent hover:bg-red-500 text-red-500 font-semibold hover:text-white  py-2 px-4 border border-red-500 hover:border-transparent rounded-full cursor-pointer">
+        Login
+      </button>
+    </div>
+  </header>
+  <hr>
+  <!--Header End-->
+  <section class="content-between w-full max-w-xs m-auto text-white rounded items-center justify-centerrelative body-font content-between">
+    <div class="w-full max-w-xs m-auto rounded p-5">
+      <form id="loginForm">
+        <center><small><span id="error" class="test-white bg-red-500"></span></small></center>
+        <div class="relative">
+          <label class="block mb-2" for="username">Full Name</label>
+          <input type="text" name="name" id="name"
+            class="w-full p-2 mb-6 bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        <div class="relative">
+          <label class="block mb-2" for="password">Email</label>
+          <input type="email" name="email" id="email"
+            class="w-full p-2 mb-6 bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        <div class="relative">
+          <label class="block mb-2" for="password">Password</label>
+          <input type="password" name="password" id="password"
+            class="w-full p-2 mb-6 bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 leading-8 transition-colors duration-200 ease-in-out" required>
+        </div>
+        
+        <div class="relative">
+          
+          <button onclick="signUp()" id="submit" type="submit" class="w-full bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 mb-6 rounded">Register</button>
+        </div>
+      </form>
+      <div>
+        <a class="hover:text-red-700 text-sm float-left" href="#" onclick="forgotPass()">Forgot Password?</a>
+        <a class="hover:text-red-700 text-sm float-right" href="../login/index.html">Have Account? Login</a>
+      </div>
+    </div>
+  </section>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="../firebase.js"></script>
+  <script src="../auth.js"></script>
+</body>
+
+</html>
